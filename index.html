@@ -10,24 +10,50 @@
       background: #f0f0f0;
       text-align: center;
       padding: 40px;
+      color: #333;
     }
     h1 {
       font-size: 2.5em;
+      margin-bottom: 30px;
     }
     a {
-      display: block;
-      margin: 10px 0;
-      font-size: 1.2em;
-      color: #0066cc;
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      color: white;
+      background-color: #007BFF;
+      border-radius: 6px;
       text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+    #status {
+      margin-top: 30px;
+      font-size: 1em;
+      color: #006600;
     }
   </style>
 </head>
 <body>
   <h1>🚀 Platformsify – Project Phases</h1>
-  <a href="phase-one/">Phase One: Branding & UI</a>
-  <a href="phase-two/">Phase Two: Demos & Decks</a>
-  <a href="phase-three/">Phase Three: Financials & Legal</a>
-  <a href="phase-four/">Phase Four: Master Kits & Launch</a>
+
+  <a href="phase-one/" onclick="showMessage('Phase One')">Phase One: Branding & UI</a>
+  <a href="phase-two/" onclick="showMessage('Phase Two')">Phase Two: Demos & Decks</a>
+  <a href="phase-three/" onclick="showMessage('Phase Three')">Phase Three: Financials & Legal</a>
+  <a href="phase-four/" onclick="showMessage('Phase Four')">Phase Four: Master Kits & Launch</a>
+
+  <div id="status"></div>
+
+  <script>
+    function showMessage(phase) {
+      document.getElementById('status').innerText = `🔄 Loading ${phase}...`;
+      setTimeout(() => {
+        document.getElementById('status').innerText = '';
+      }, 3000);
+    }
+  </script>
 </body>
 </html>
